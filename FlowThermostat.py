@@ -19,7 +19,7 @@ version = 1.2
 #       printSpeed(float:30) Print Speed (Copy from Print config-tab!)
 #       layerHeight(float:0.2) Individual layer height (Copy) 
 #       nozzleDiameter(float:0.4) Extruder nozzle diameter (Copy)
-#       minTemp(float:240.0) Minimum allowed temperature (C)
+#       minTemp(float:234.0) Minimum allowed temperature (C)
 # for Nylon 6
 
 # Params for PLA
