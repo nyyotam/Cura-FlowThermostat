@@ -2,18 +2,27 @@
 #Info: Adjusts the heater temperature to match the reduced flow when using the built in Cool feature. This allows for faster an more high quality prints. Later versions vill extract known data for the fields below from the Gcode.
 #Depend: GCode
 #Type: postprocess
-#Param: firstLayerTemp(float:300.0) First layers printing temperature (C)
-#Param: thermostatSlope(float:25) Thermostat slope setting (typical 3.75)
-#Param: printSpeed(float:30) Print Speed (Copy from Print config-tab!)
+#Param: firstLayerTemp(float:230.0) First layers printing temperature (C)
+#Param: thermostatSlope(float:3.75) Thermostat slope setting (typical 3.75)
+#Param: printSpeed(float:100) Print Speed (Copy from Print config-tab!)
 #Param: layerHeight(float:0.2) Individual layer height (Copy) 
 #Param: nozzleDiameter(float:0.4) Extruder nozzle diameter (Copy)
-#Param: minTemp(float:245.0) Minimum allowed temperature (C)
+#Param: minTemp(float:195.0) Minimum allowed temperature (C)
+# for PLA
 
 version = 1.2
 
-
 #or get it from C:\Users\Jaknil\Documents\printer\Cura-master\Cura\util\profile.py loadGlobalProfileFromString(options):
 
+#       firstLayerTemp(float:300.0) First layers printing temperature (C)
+#       thermostatSlope(float:33) Thermostat slope setting (typical 3.75)
+#       printSpeed(float:30) Print Speed (Copy from Print config-tab!)
+#       layerHeight(float:0.2) Individual layer height (Copy) 
+#       nozzleDiameter(float:0.4) Extruder nozzle diameter (Copy)
+#       minTemp(float:240.0) Minimum allowed temperature (C)
+# for Nylon 6
+
+# Params for PLA
 # slowSpeed(float:50.0) Good slow printing speed (mm/s)
 # slowTemp(float:205.0) Good slow printing temp (C)
 # fastSpeed(float:110.0) Good fast printing speed (mm/s)
@@ -22,12 +31,6 @@ version = 1.2
 
 import re
 
-#Para firstLayerTemp(float:230.0) First layers printing temperature (C)
-#Para thermostatSlope(float:3.75) Thermostat slope setting (typical 3.75)
-#Para printSpeed(float:100) Print Speed (Copy from Print config-tab!)
-#Para layerHeight(float:0.2) Individual layer height (Copy) 
-#Para nozzleDiameter(float:0.4) Extruder nozzle diameter (Copy)
-#Para minTemp(float:195.0) Minimum allowed temperature (C)
 #standard code-grabber and searcher, not plugin specific
 def getValue(line, key, default = None):
 	if not key in line or (';' in line and line.find(key) > line.find(';')):
